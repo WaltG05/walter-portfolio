@@ -2,7 +2,9 @@
 
 Modern developer portfolio built with React, Vite and TailwindCSS.
 
-Designed to showcase projects, technologies and experience in web and mobile development.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css)
 
 ---
 
