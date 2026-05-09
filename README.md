@@ -1,16 +1,56 @@
-# React + Vite
+# 💼 Walter Gonzalez - Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Modern developer portfolio built with React, Vite and TailwindCSS.
 
-Currently, two official plugins are available:
+Designed to showcase projects, technologies and experience in web and mobile development.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🌐 Live Website
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔗 [Visit Portfolio](https://waltergonz.netlify.app)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+
+- React
+- Vite
+- TailwindCSS
+- JavaScript
+
+---
+
+## ✨ Features
+
+- Responsive modern UI
+- Dark mode inspired design
+- Project showcase section
+- GitHub and LinkedIn integration
+- Mobile-first layout
+- Smooth animations and transitions
+
+---
+
+## 📂 Featured Projects
+
+### Incident Management System
+Web application developed with Vue.js and Directus for social incident tracking and management.
+
+### Citizen Management App
+Cross-platform application built with React, Ionic and Firebase.
+
+---
+
+## 📸 Preview
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/177463df-a79f-4ebf-8611-e05a22ed397b" />
+
+
+---
+
+## ⚡ Installation
+
+```bash
+npm install
+npm run dev
