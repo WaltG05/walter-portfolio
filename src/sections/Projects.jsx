@@ -1,0 +1,151 @@
+import { ButtonOut } from "@/components/Button-Out";
+import { Button } from "@/components/Button";
+import { FaGithub, FaGlobe } from "react-icons/fa";
+import { ExternalLink } from "lucide-react";
+
+const projectsList = [
+  {
+    title: "Sistema web de Gestión de Incidencias - Acción Social",
+    description:
+      "Desarrollé un sistema web para gestionar incidencias en una organización sin fines de lucro, utilizando React para el frontend y Firebase para el backend. El sistema permite a los usuarios reportar, rastrear y resolver incidencias de manera eficiente, mejorando la comunicación y la respuesta del equipo.",
+    technologies: ["Vue.js", "Directus"],
+    featured: true,
+  },
+  {
+    title: "Aplicación de Gestión Ciudadana (Web y Móvil)",
+    description:
+      "Creé una aplicación de gestión ciudadana para una municipalidad, utilizando Ionic para el desarrollo móvil y React para el frontend web. La aplicación permite a los ciudadanos reportar problemas en la comunidad y recibir actualizaciones en tiempo real, mejorando la participación ciudadana y la eficiencia del gobierno local.",
+    technologies: ["Ionic", "React", "Firebase", "Directus"],
+    featured: false,
+  },
+  //  {
+  //   title: "Sistema web de Gestión de Incidencias - Acción Social",
+  //   description:
+  //     "Desarrollé un sistema web para gestionar incidencias en una organización sin fines de lucro, utilizando React para el frontend y Firebase para el backend. El sistema permite a los usuarios reportar, rastrear y resolver incidencias de manera eficiente, mejorando la comunicación y la respuesta del equipo.",
+  //   technologies: ["Vue.js", "Directus"],
+  //   featured: false,
+  // },
+];
+
+export const Projects = () => {
+  return (
+    <section id="projects" className="relative py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-16 text-center">
+          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary">
+            Projects
+          </p>
+          <h2 className="text-balace text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+            Featured Projects
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground">
+            A selection of projects that showcase my skills and passion for
+            development.
+          </p>
+        </div>
+        <div className="grid gap-6 lg:grid-cols-2">
+          {/* Tech items would go here */}
+          {projectsList.map((project, index) => (
+            <div
+              className={`group relative overflow-hidden rounded-2xl border border-border/50 bg-card/30 backdrop-blur-sm 
+                transition-all duration-300 hover:border-primary/50 hover:bg-card/50 
+                ${project.featured ? "lg:col-span-2" : "lg:col-span-2"}`}
+            >
+              {/* Glassmorphism effect */}
+              <div className="absolute inset-0 -z-10 rounded-xl bg-linear-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              
+              <div
+                className={`p-8 ${project.featured ? "lg:flex lg:gap-8" : "lg:flex lg:gap-6"}`}
+              >
+                {/* Project Preview */}
+                <div
+                  className={`mb-6 overflow-hidden rounded-xl border border-border/50 bg-secondary/50 ${
+                    project.featured ? "lg:mb-0 lg:w-1/2" : "lg:mb-0 lg:w-1/2"
+                  }`}
+                >
+                  <div className="aspect-video p-4">
+                    {/* Mock App UI */}
+                    <div className="h-full w-full rounded-lg border border-border/30 bg-background/50 p-3">
+                      <div className="mb-3 flex gap-1.5">
+                        <div className="h-2 w-2 rounded-full bg-red-500/60" />
+                        <div className="h-2 w-2 rounded-full bg-yellow-500/60" />
+                        <div className="h-2 w-2 rounded-full bg-green-500/60" />
+                      </div>
+                      <div className="space-y-2">
+                        <div className="h-2 w-1/3 rounded bg-muted" />
+                        <div className="h-8 w-full rounded bg-primary/10" />
+                        <div className="grid grid-cols-3 gap-2">
+                          <div className="h-6 rounded bg-muted/50" />
+                          <div className="h-6 rounded bg-muted/50" />
+                          <div className="h-6 rounded bg-muted/50" />
+                        </div>
+                        <div className="h-12 rounded bg-muted/30" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Project Info */}
+                <div className={`${project.featured ? "lg:w-1/2" : "lg:w-1/2"}`}>
+                  {project.featured && (
+                    <span className="mb-2 inline-block rounded-full bg-primary/10 px-3 py-1 text-primary text-xs font-medium">
+                      Featured Project
+                    </span>
+                  )}
+                  <h3 className="mb-3 text-xl font-bold text-foreground">
+                    {project.title}
+                  </h3>
+                  <p className="mb-4 text-muted-foreground text-pretty leading-relaxed">
+                    {project.description}
+                  </p>
+                  {/* Tech Stack */}
+                  <div className="mb-6 flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full border border-border/50 bg-secondary/20 px-3 py-1 text-xs font-medium text-muted-foreground"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  {/* Actions */}
+                  <div className="flex gap-3">
+                    <ButtonOut
+                      variant="outline"
+                      size="sm"
+                      className="gap-2 border-border hover:bg-secondary/50"
+                    >
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2"
+                      >
+                        <FaGithub className="h-4 w-4" />
+                        Code
+                      </a>
+                    </ButtonOut>
+                    <ButtonOut
+                      size="sm"
+                      className="gap-2 bg-primary text-tertiary hover:bg-primary/90"
+                    >
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Live Demo
+                      </a>
+                    </ButtonOut>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
