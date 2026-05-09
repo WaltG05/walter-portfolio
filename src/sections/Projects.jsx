@@ -1,7 +1,6 @@
+import { useState } from "react";
 import { ButtonOut } from "@/components/Button-Out";
-import { Button } from "@/components/Button";
-import { FaGithub, FaGlobe } from "react-icons/fa";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, X } from "lucide-react";
 
 const projectsList = [
   {
@@ -10,6 +9,9 @@ const projectsList = [
       "Desarrollé un sistema web para gestionar incidencias en una organización sin fines de lucro, utilizando React para el frontend y Firebase para el backend. El sistema permite a los usuarios reportar, rastrear y resolver incidencias de manera eficiente, mejorando la comunicación y la respuesta del equipo.",
     technologies: ["Vue.js", "Directus"],
     featured: true,
+    github: "https://github.com/WaltG05/Sistema-de-Gestion-de-Incidencias",
+    live: "https://integrasocial.innobitsolutions.com.ar",
+    image: "./public/projects/preview-1.png"
   },
   {
     title: "Aplicación de Gestión Ciudadana (Web y Móvil)",
@@ -17,17 +19,13 @@ const projectsList = [
       "Creé una aplicación de gestión ciudadana para una municipalidad, utilizando Ionic para el desarrollo móvil y React para el frontend web. La aplicación permite a los ciudadanos reportar problemas en la comunidad y recibir actualizaciones en tiempo real, mejorando la participación ciudadana y la eficiencia del gobierno local.",
     technologies: ["Ionic", "React", "Firebase", "Directus"],
     featured: false,
+    // image: "./public/projects/preview-2.png"
   },
-  //  {
-  //   title: "Sistema web de Gestión de Incidencias - Acción Social",
-  //   description:
-  //     "Desarrollé un sistema web para gestionar incidencias en una organización sin fines de lucro, utilizando React para el frontend y Firebase para el backend. El sistema permite a los usuarios reportar, rastrear y resolver incidencias de manera eficiente, mejorando la comunicación y la respuesta del equipo.",
-  //   technologies: ["Vue.js", "Directus"],
-  //   featured: false,
-  // },
 ];
 
 export const Projects = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   return (
     <section id="projects" className="relative py-24">
       <div className="mx-auto max-w-6xl px-6">
@@ -47,6 +45,7 @@ export const Projects = () => {
           {/* Tech items would go here */}
           {projectsList.map((project, index) => (
             <div
+              key={index}
               className={`group relative overflow-hidden rounded-2xl border border-border/50 bg-card/30 backdrop-blur-sm 
                 transition-all duration-300 hover:border-primary/50 hover:bg-card/50 
                 ${project.featured ? "lg:col-span-2" : "lg:col-span-2"}`}
@@ -59,28 +58,19 @@ export const Projects = () => {
               >
                 {/* Project Preview */}
                 <div
-                  className={`mb-6 overflow-hidden rounded-xl border border-border/50 bg-secondary/50 ${
+                  className={`mb-2 overflow-hidden rounded-xl${
                     project.featured ? "lg:mb-0 lg:w-1/2" : "lg:mb-0 lg:w-1/2"
                   }`}
                 >
-                  <div className="aspect-video p-4">
+                  <div className="aspect-auto">
                     {/* Mock App UI */}
-                    <div className="h-full w-full rounded-lg border border-border/30 bg-background/50 p-3">
-                      <div className="mb-3 flex gap-1.5">
-                        <div className="h-2 w-2 rounded-full bg-red-500/60" />
-                        <div className="h-2 w-2 rounded-full bg-yellow-500/60" />
-                        <div className="h-2 w-2 rounded-full bg-green-500/60" />
-                      </div>
-                      <div className="space-y-2">
-                        <div className="h-2 w-1/3 rounded bg-muted" />
-                        <div className="h-8 w-full rounded bg-primary/10" />
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="h-6 rounded bg-muted/50" />
-                          <div className="h-6 rounded bg-muted/50" />
-                          <div className="h-6 rounded bg-muted/50" />
-                        </div>
-                        <div className="h-12 rounded bg-muted/30" />
-                      </div>
+                    <div className="h-full w-full overflow-hidden rounded-lg border border-border/30 bg-background/50">
+                      <img 
+                        src={project.image} 
+                        alt={project.title} 
+                        className="h-full w-full cursor-pointer object-cover transition-transform duration-500 hover:scale-105"
+                        onClick={() => project.image && setSelectedImage(project.image)}
+                      />
                     </div>
                   </div>
                 </div>
@@ -111,21 +101,6 @@ export const Projects = () => {
                   {/* Actions */}
                   <div className="flex gap-3">
                     <ButtonOut
-                      variant="outline"
-                      size="sm"
-                      className="gap-2 border-border hover:bg-secondary/50"
-                    >
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2"
-                      >
-                        <FaGithub className="h-4 w-4" />
-                        Code
-                      </a>
-                    </ButtonOut>
-                    <ButtonOut
                       size="sm"
                       className="gap-2 bg-primary text-tertiary hover:bg-primary/90"
                     >
@@ -146,6 +121,28 @@ export const Projects = () => {
           ))}
         </div>
       </div>
+
+      {/* Modal de Imagen Ampliada */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 p-4 backdrop-blur-sm"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="absolute right-6 top-6 text-foreground transition-colors hover:text-primary cursor-pointer"
+            onClick={() => setSelectedImage(null)}
+            aria-label="Cerrar"
+          >
+            <X className="h-8 w-8" />
+          </button>
+          <img
+            src={selectedImage}
+            alt="Vista ampliada del proyecto"
+            className="max-h-[90vh] max-w-[90vw] rounded-xl object-contain shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </section>
   );
 };
