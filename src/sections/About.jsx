@@ -15,8 +15,8 @@ export const About = () => {
         <div className="mx-auto max-w-3xl space-y-8 text-center">
           <p className="text-pretty text-lg leading-relaxed text-muted-foreground">
             Estudiante de Análisis y Desarrollo de Software, con interés en el
-            desarrollo web y móvil. Experiencia académica desarrollando
-            aplicaciones con tecnologías como React, Vue.js y MySQL,
+            desarrollo web. Experiencia académica desarrollando
+            aplicaciones con tecnologías como React, Vue.js, Laravel y MySQL,
             participando en proyectos de gestión de incidencias y soluciones
             multiplataforma. Interés en continuar creciendo profesionalmente
             en entornos de desarrollo colaborativo y tecnologías modernas.

@@ -6,12 +6,12 @@ const projectsList = [
   {
     title: "Sistema web de Gestión de Incidencias - Acción Social",
     description:
-      "Desarrollé un sistema web para gestionar incidencias en una organización sin fines de lucro, utilizando React para el frontend y Firebase para el backend. El sistema permite a los usuarios reportar, rastrear y resolver incidencias de manera eficiente, mejorando la comunicación y la respuesta del equipo.",
+      "Desarrollé un sistema web para gestionar incidencias en una organización sin fines de lucro, utilizando Vue.js para el frontend y Directus para el backend. El sistema permite a los usuarios reportar, rastrear y resolver incidencias de manera eficiente, mejorando la comunicación y la respuesta del equipo.",
     technologies: ["Vue.js", "Directus"],
     featured: true,
     github: "https://github.com/WaltG05/Sistema-de-Gestion-de-Incidencias",
     live: "https://integrasocial.innobitsolutions.com.ar",
-    image: "./public/projects/preview-1.png",
+    image: "./projects/preview-1.png",
     demo: true
   },
   {

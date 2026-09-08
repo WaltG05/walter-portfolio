@@ -40,7 +40,7 @@ export const Hero = () => {
           <div className="space-y-6">
             <div className="animate-fade-in space-y-4">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
-                Software Developer Trainee
+                Software Developer
               </p>
             </div>
 
@@ -50,7 +50,7 @@ export const Hero = () => {
                 Walter Gonzalez
               </h1>
               <p className="max-w-lg text-pretty text-lg leading-relaxed text-muted-foreground">
-                Creando experiencias web y móviles modernas con{" "}
+                Creando experiencias web modernas con{" "}
                 <span className="text-foreground">React</span>,{" "}
                 <span className="text-foreground">Vue.js</span>,{" "}
                 <span className="text-foreground">Laravel</span>,{" "}
