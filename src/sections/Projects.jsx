@@ -12,7 +12,7 @@ const projectsList = [
     github: "https://github.com/WaltG05/Sistema-de-Gestion-de-Incidencias",
     live: "https://integrasocial.innobitsolutions.com.ar",
     image: "./projects/preview-1.png",
-    demo: true
+    demo: false
   },
   {
     title: "Aplicación de Gestión Ciudadana (Web y Móvil)",
