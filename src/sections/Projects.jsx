@@ -11,7 +11,8 @@ const projectsList = [
     featured: true,
     github: "https://github.com/WaltG05/Sistema-de-Gestion-de-Incidencias",
     live: "https://integrasocial.innobitsolutions.com.ar",
-    image: "./public/projects/preview-1.png"
+    image: "./public/projects/preview-1.png",
+    demo: true
   },
   {
     title: "Aplicación de Gestión Ciudadana (Web y Móvil)",
@@ -19,7 +20,8 @@ const projectsList = [
       "Creé una aplicación de gestión ciudadana para una municipalidad, utilizando Ionic para el desarrollo móvil y React para el frontend web. La aplicación permite a los ciudadanos reportar problemas en la comunidad y recibir actualizaciones en tiempo real, mejorando la participación ciudadana y la eficiencia del gobierno local.",
     technologies: ["Ionic", "React", "Firebase", "Directus"],
     featured: false,
-    // image: "./public/projects/preview-2.png"
+    image: "./projects/preview-2.png",
+    demo: false
   },
 ];
 
@@ -31,14 +33,14 @@ export const Projects = () => {
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-16 text-center">
           <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary">
-            Projects
+            Proyectos
           </p>
           <h2 className="text-balace text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Featured Projects
+            Proyectos Destacados
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground">
-            A selection of projects that showcase my skills and passion for
-            development.
+            Una selección de proyectos que muestran mis habilidades y pasión
+            por el desarrollo.
           </p>
         </div>
         <div className="grid gap-6 lg:grid-cols-2">
@@ -78,7 +80,7 @@ export const Projects = () => {
                 <div className={`${project.featured ? "lg:w-1/2" : "lg:w-1/2"}`}>
                   {project.featured && (
                     <span className="mb-2 inline-block rounded-full bg-primary/10 px-3 py-1 text-primary text-xs font-medium">
-                      Featured Project
+                      Proyecto Destacado
                     </span>
                   )}
                   <h3 className="mb-3 text-xl font-bold text-foreground">
@@ -99,7 +101,8 @@ export const Projects = () => {
                     ))}
                   </div>
                   {/* Actions */}
-                  <div className="flex gap-3">
+                  {project.demo && (
+                    <div className="flex gap-3">
                     <ButtonOut
                       size="sm"
                       className="gap-2 bg-primary text-tertiary hover:bg-primary/90"
@@ -111,10 +114,11 @@ export const Projects = () => {
                         className="flex items-center gap-2"
                       >
                         <ExternalLink className="h-4 w-4" />
-                        Live Demo
+                        Ver Demo
                       </a>
                     </ButtonOut>
                   </div>
+                  )}
                 </div>
               </div>
             </div>

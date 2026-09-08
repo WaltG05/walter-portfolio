@@ -30,14 +30,14 @@ export const Contact = () => {
 
           <div className="text-center">
             <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary">
-              Get In Touch
+              Hablemos
             </p>
             <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-              Contact Me
+              Contactame
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-pretty text-muted-foreground">
-              I'm always open to discussing new projects, creative ideas, or
-              opportunities to be part of your visions. Feel free to reach out!
+              Siempre estoy abierto a hablar de nuevos proyectos, ideas o
+              oportunidades de sumarme a tu equipo. ¡Escribime sin problema!
             </p>
 
             {/* Social Links */}
@@ -52,6 +52,7 @@ export const Contact = () => {
                   }
                   className="group flex h-14 w-14 items-center justify-center rounded-xl border border-border/50 bg-secondary/30 transition-all duration-300 hover:border-primary/50 hover:bg-primary/10"
                   aria-label={link.name}
+                  title={link.name}
                 >
                   <link.icon className="h-5 w-5 text-muted-foreground transition-colors group-hover:text-primary" />
                 </a>
@@ -60,12 +61,12 @@ export const Contact = () => {
 
             {/* Email */}
             <p className="mt-8 text-muted-foreground">
-              Or reach me directly at{" "}
+              O escribime directamente a{" "}
               <a
                 href="mailto:waltergonzalez2857@gmail.com"
                 className="text-primary transition-colors hover:text-primary/80"
               >
-                waltergonzalez2857@example.com
+                waltergonzalez2857@gmail.com
               </a>
             </p>
           </div>

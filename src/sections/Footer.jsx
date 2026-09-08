@@ -4,11 +4,11 @@ export const Footer = () => {
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Walter Gonzalez. All rights reserved.
+            © {new Date().getFullYear()} Walter Gonzalez.
           </p>
           <p className="text-sm text-muted-foreground">
-            Built with{" "}
-            <span className="text-primary">React</span> &{" "}
+            Hecho con{" "}
+            <span className="text-primary">React</span> y{" "}
             <span className="text-primary">Tailwind CSS</span>
           </p>
         </div>

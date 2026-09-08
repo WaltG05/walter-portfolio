@@ -4,10 +4,10 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
+  { href: "#about", label: "Sobre Mí" },
+  { href: "#projects", label: "Proyectos" },
   { href: "#stack", label: "Stack" },
-  { href: "#contact", label: "Contact" },
+  { href: "#contact", label: "Contacto" },
 ];
 
 export const Navbar = () => {
@@ -38,7 +38,7 @@ export const Navbar = () => {
         <div className="hidden md:block">
           <Button size="sm" className="font-semibold gap-2 text-secondary border-border hover:bg-primary/30 hover:scale-105 transition-all duration-400">
             <a href="#contact">
-            Contact Me
+            Contactarme
             </a>
           </Button>
         </div>
@@ -71,7 +71,7 @@ export const Navbar = () => {
                 href="#contact"
                 className="flex items-center gap-2 font-semibold"
               >
-                Contact Me
+                Contactarme
               </a>
             </Button>
           </div>

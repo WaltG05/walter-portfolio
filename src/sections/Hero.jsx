@@ -5,10 +5,7 @@ import { FiGithub } from "react-icons/fi";
 
 export const Hero = () => {
   return (
-    <section
-      id="about"
-      className="relative min-h-screen pt-24 overflow-hidden"
-    >
+    <section className="relative min-h-screen pt-24 overflow-hidden">
       {/* Bg */}
       <div className="absolute inset-0">
         <img
@@ -53,14 +50,13 @@ export const Hero = () => {
                 Walter Gonzalez
               </h1>
               <p className="max-w-lg text-pretty text-lg leading-relaxed text-muted-foreground">
-                Crafting modern web and mobile experiencies with{" "}
+                Creando experiencias web y móviles modernas con{" "}
                 <span className="text-foreground">React</span>,{" "}
                 <span className="text-foreground">Vue.js</span>,{" "}
-                <span className="text-foreground">Ionic</span>,{" "}
-                <span className="text-foreground">Tailwind</span>,{" "}
-                <span className="text-foreground">Firebase</span>, and{" "}
-                <span className="text-foreground">Directus</span>. Passionate
-                about clean code and intuitive interfaces
+                <span className="text-foreground">Laravel</span>,{" "}
+                <span className="text-foreground">Tailwind</span> y{" "}
+                <span className="text-foreground">Directus</span>. Apasionado
+                por el código limpio y las interfaces intuitivas.
               </p>
             </div>
 
@@ -73,7 +69,7 @@ export const Hero = () => {
                   href="#projects"
                   className="flex items-center gap-2 font-semibold"
                 >
-                  View Projects <ArrowRight className="h-4 w-4" />
+                  Ver Proyectos <ArrowRight className="h-4 w-4" />
                 </a>
               </ButtonOut>
 
@@ -92,15 +88,15 @@ export const Hero = () => {
             <div className="flex gap-8 pt-4">
               <div>
                 <p className="text-3xl font-bold text-foreground">8+</p>
-                <p className="text-sm text-muted-foreground">Technologies</p>
+                <p className="text-sm text-muted-foreground">Tecnologías</p>
               </div>
               <div>
                 <p className="text-3xl font-bold text-foreground">2+</p>
-                <p className="text-sm text-muted-foreground">Projects</p>
+                <p className="text-sm text-muted-foreground">Proyectos</p>
               </div>
               <div>
                 <p className="text-3xl font-bold text-foreground">2+</p>
-                <p className="text-sm text-muted-foreground">Years Learning</p>
+                <p className="text-sm text-muted-foreground">Años Aprendiendo</p>
               </div>
             </div>
           </div>
