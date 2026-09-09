@@ -87,7 +87,7 @@ export const Hero = () => {
             {/* Stats */}
             <div className="flex gap-8 pt-4">
               <div>
-                <p className="text-3xl font-bold text-foreground">8+</p>
+                <p className="text-3xl font-bold text-foreground">10+</p>
                 <p className="text-sm text-muted-foreground">Tecnologías</p>
               </div>
               <div>
