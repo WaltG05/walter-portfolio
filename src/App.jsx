@@ -35,7 +35,7 @@ function App() {
         <TechStack />
         <About />
         <Projects />
-        <Design />
+        {/* <Design /> */}
         {/* <Experience /> */}
         <Contact />
         <Footer />
