@@ -48,12 +48,15 @@ const projectsList = [
     badge: "Práctica Profesional · Equipo de 4",
     title: "Sistema web de Gestión de Incidencias - Acción Social",
     description:
-      "Sistema para digitalizar el registro, seguimiento y trazabilidad de incidencias sociales, desarrollado en equipo de 4 (09/2025 – 11/2025). Me encargué del backend (modelé y creé las tablas en Directus y expuse los datos por su API REST) y fui autor principal del frontend en Vue.js (46 de 111 commits y ~75 % del código), con dashboards para visualizar y consultar los casos.",
+      "Sistema para digitalizar el registro, seguimiento y trazabilidad de incidencias sociales, desarrollado en equipo de 4 (09/2025 – 11/2025). Me encargué del backend (modelé y creé las tablas en Directus y expuse los datos por su API REST) y fui autor principal del frontend en Vue.js (46 de 111 commits y ~75 % del código), con dashboards para visualizar y consultar los casos. La demo es una recreación con datos ficticios.",
     technologies: ["Vue.js", "Directus", "JavaScript", "MySQL", "API REST"],
     featured: false,
     isPrivate: true,
-    privateLabel: "Código privado (proyecto en equipo)",
-    image: "./projects/preview-1.png",
+    privateLabel: "Código del sistema real privado (proyecto en equipo)",
+    live: "https://accion-social-demo.netlify.app/",
+    github: "https://github.com/WaltG05/accion-social-demo",
+    githubLabel: "Código de la demo",
+    image: "./projects/accion-social-demo.png",
   },
 ];
 
@@ -190,7 +193,7 @@ export const Projects = () => {
                           className="flex items-center gap-2"
                         >
                           <FiGithub className="h-4 w-4" />
-                          GitHub
+                          {project.githubLabel ?? "GitHub"}
                         </a>
                       </ButtonOut>
                     )}
