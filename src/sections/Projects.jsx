@@ -104,7 +104,7 @@ export const Projects = () => {
                           Arquitectura &amp; Métricas
                         </span>
                         <span className="inline-flex items-center gap-1 rounded-full border border-border/50 px-2.5 py-0.5 text-[11px]">
-                          <Lock className="h-3 w-3" />
+                          <LockIcon className="h-3 w-3" />
                           Producción
                         </span>
                       </div>
