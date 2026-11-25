@@ -50,7 +50,7 @@ export const Hero = () => {
                 Walter Gonzalez
               </h1>
               <p className="max-w-lg text-pretty text-lg leading-relaxed text-muted-foreground">
-                Construyo aplicaciones webs escalables y llevadas a producción
+                Construyo aplicaciones web escalables y llevadas a producción
                 con <span className="text-foreground">Laravel</span>,{" "}
                 <span className="text-foreground">React</span>,{" "}
                 <span className="text-foreground">PostgreSQL</span> y{" "}
@@ -80,7 +80,7 @@ export const Hero = () => {
                 className="gap-2 hover:bg-secondary/30 border-border hover:scale-105 transition-all duration-400"
               >
                 <a 
-                href="public/cv-walter-gonzalez.pdf" className="flex items-center gap-2">
+                href="/cv-walter-gonzalez.pdf" className="flex items-center gap-2">
                   <Download className="h-4 w-4" />
                   Descargar CV
                 </a>

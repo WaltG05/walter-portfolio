@@ -7,7 +7,7 @@ const projectsList = [
   {
     badge: "Proyecto destacado · Producción",
     title: "Plataforma de Códigos QR Dinámicos y Analítica",
-    description: "Sistema web desarrollado y llevado a producción para una desarrolladora inmobiliaria y comercial de Guatemala. Permite gestionar campañas de códigos QR dinámcios, analítica de escaneos y consumo vía API REST auteneticada. Optimicé la ruta pública de redirección con APCu y validé el rendimiento con k6 (p95 de 49 a 25 ms a 20 visita/s y +60% de capacidad sostenida), respaldado por 584 pruebas automatizadas.",
+    description: "Sistema web desarrollado y llevado a producción para una empresa de Guatemala. Permite gestionar campañas de códigos QR dinámicos, analítica de escaneos y consumo vía API REST auteneticada. Optimicé la ruta pública de redirección con APCu y validé el rendimiento con k6 (p95 de 49 a 25 ms a 20 visitas/s y +60% de capacidad sostenida), respaldado por 584 pruebas automatizadas.",
     technologies: [
       "Laravel",
       "React",
@@ -198,7 +198,7 @@ export const Projects = () => {
                     {project.isPrivate && (
                       <span className="inline-flex items-center gap-1.5 rounded-lg border border-border/50 bg-background/40 px-3 py-1.5 text-xs text-muted-foreground">
                         <LockIcon className="h-3.5 w-3.5" />
-                        Código privado (NDA)
+                        Código privado (propiedad del cliente)
                       </span>
                     )}
                   </div>
