@@ -45,14 +45,14 @@ const projectsList = [
     image: "./projects/gamecenter.png",
   },
   {
-    badge: "Práctica Profesional",
+    badge: "Práctica Profesional · Equipo de 5",
     title: "Sistema web de Gestión de Incidencias - Acción Social",
     description:
-      "Aplicación web desarrollada para digitalizar el registro, seguimiento de estados y reportes estadísticos de casos en el área de Acción Social municipal. Construida con Vue.js en el frontend consumiendo API REST sobre Directus con control de acceso basado en roles (RBAC).",
+      "Sistema para digitalizar el registro, seguimiento de estados y reportes estadísticos de casos del área de Acción Social municipal, desarrollado en equipo. Fui el autor principal del frontend en Vue.js (46 de 111 commits y ~75 % del código), que consume una API REST sobre Directus con control de acceso basado en roles (RBAC).",
     technologies: ["Vue.js", "Directus", "JavaScript", "MySQL", "API REST"],
     featured: false,
-    github: "https://github.com/WaltG05/Sistema-de-Gestion-de-Incidencias",
-    live: "https://integrasocial.innobitsolutions.com.ar",
+    isPrivate: true,
+    privateLabel: "Código privado (proyecto en equipo)",
     image: "./projects/preview-1.png",
   },
 ];
@@ -198,7 +198,7 @@ export const Projects = () => {
                     {project.isPrivate && (
                       <span className="inline-flex items-center gap-1.5 rounded-lg border border-border/50 bg-background/40 px-3 py-1.5 text-xs text-muted-foreground">
                         <LockIcon className="h-3.5 w-3.5" />
-                        Código privado (propiedad del cliente)
+                        {project.privateLabel ?? "Código privado (propiedad del cliente)"}
                       </span>
                     )}
                   </div>
