@@ -45,7 +45,7 @@ const projectsList = [
     image: "./projects/gamecenter.png",
   },
   {
-    badge: "Práctica Profesional · Equipo de 5",
+    badge: "Práctica Profesional · Equipo de 4",
     title: "Sistema web de Gestión de Incidencias - Acción Social",
     description:
       "Sistema para digitalizar el registro, seguimiento de estados y reportes estadísticos de casos del área de Acción Social municipal, desarrollado en equipo. Fui el autor principal del frontend en Vue.js (46 de 111 commits y ~75 % del código), que consume una API REST sobre Directus con control de acceso basado en roles (RBAC).",
