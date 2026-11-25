@@ -48,7 +48,7 @@ const projectsList = [
     badge: "Práctica Profesional · Equipo de 4",
     title: "Sistema web de Gestión de Incidencias - Acción Social",
     description:
-      "Sistema para digitalizar el registro, seguimiento de estados y reportes estadísticos de casos del área de Acción Social municipal, desarrollado en equipo. Fui el autor principal del frontend en Vue.js (46 de 111 commits y ~75 % del código), que consume una API REST sobre Directus con control de acceso basado en roles (RBAC).",
+      "Sistema para digitalizar el registro, seguimiento y trazabilidad de incidencias sociales, desarrollado en equipo de 4 (09/2025 – 11/2025). Me encargué del backend (modelé y creé las tablas en Directus y expuse los datos por su API REST) y fui autor principal del frontend en Vue.js (46 de 111 commits y ~75 % del código), con dashboards para visualizar y consultar los casos.",
     technologies: ["Vue.js", "Directus", "JavaScript", "MySQL", "API REST"],
     featured: false,
     isPrivate: true,
