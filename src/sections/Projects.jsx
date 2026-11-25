@@ -7,7 +7,7 @@ const projectsList = [
   {
     badge: "Proyecto destacado · Producción",
     title: "Plataforma de Códigos QR Dinámicos y Analítica",
-    description: "Sistema web desarrollado y llevado a producción para una empresa de Guatemala. Permite gestionar campañas de códigos QR dinámicos, analítica de escaneos y consumo vía API REST auteneticada. Optimicé la ruta pública de redirección con APCu y validé el rendimiento con k6 (p95 de 49 a 25 ms a 20 visitas/s y +60% de capacidad sostenida), respaldado por 584 pruebas automatizadas.",
+    description: "Sistema web desarrollado y llevado a producción para una empresa de Guatemala. Permite gestionar campañas de códigos QR dinámicos, analítica de escaneos y consumo vía API REST autenticada. Optimicé la ruta pública de redirección con APCu y validé el rendimiento con k6 (p95 de 49 a 25 ms a 20 visitas/s y +60 % de capacidad, de ~37 a ~60 visitas/s), respaldado por 584 pruebas automatizadas.",
     technologies: [
       "Laravel",
       "React",
@@ -23,7 +23,7 @@ const projectsList = [
     metrics: [
       { value: "584", label: "Pruebas automatizadas" },
       { value: "49 → 25 ms", label: "Latencia p95 (k6)" },
-      { value: "+60%", label: "Capacidad sostenida" },
+      { value: "+60 %", label: "Capacidad (~37 → ~60 visitas/s)" },
     ],
   },
   {
