@@ -1,51 +1,61 @@
-import { FaReact, FaGithub, FaLinux, FaWindows } from "react-icons/fa";
+import { FaReact, FaGithub, FaLinux } from "react-icons/fa";
 import {
-  SiVuedotjs,
-  SiDirectus,
-  SiMysql,
   SiLaravel,
-  SiTailwindcss,
-  SiCanva,
   SiPhp,
   SiJavascript,
+  SiTypescript,
+  SiAngular,
+  SiVuedotjs,
+  SiPostgresql,
+  SiMysql,
+  SiDirectus,
+  SiDocker,
+  SiNginx,
   SiGit,
+  SiTailwindcss,
+  SiInertia,
+  SiK6,
 } from "react-icons/si";
-import { Server, FolderUp } from "lucide-react";
+import { Layers, TestTube2, Gauge } from "lucide-react";
 
 const categories = [
   {
-    title: "Desarrollo",
+    title: "Backend & Frontend",
     items: [
-      { name: "React", icon: <FaReact className="h-8 w-8" />, color: "text-cyan-400" },
-      { name: "Vue.js", icon: <SiVuedotjs className="h-8 w-8" />, color: "text-emerald-400" },
       { name: "Laravel", icon: <SiLaravel className="h-8 w-8" />, color: "text-red-500" },
-      { name: "JavaScript", icon: <SiJavascript className="h-8 w-8" />, color: "text-yellow-400" },
       { name: "PHP", icon: <SiPhp className="h-8 w-8" />, color: "text-indigo-400" },
+      { name: "React", icon: <FaReact className="h-8 w-8" />, color: "text-cyan-400" },
+      { name: "Inertia.js", icon: <SiInertia className="h-8 w-8" />, color: "text-purple-400" },
+      { name: "JavaScript", icon: <SiJavascript className="h-8 w-8" />, color: "text-yellow-400" },
+      { name: "TypeScript", icon: <SiTypescript className="h-8 w-8" />, color: "text-blue-400" },
+      { name: "Angular", icon: <SiAngular className="h-8 w-8" />, color: "text-rose-500" },
+      { name: "Vue.js", icon: <SiVuedotjs className="h-8 w-8" />, color: "text-emerald-400" },
     ],
   },
   {
     title: "Bases de Datos & CMS",
     items: [
-      { name: "MySQL", icon: <SiMysql className="h-8 w-8" />, color: "text-sky-400" },
+      { name: "PostgreSQL", icon: <SiPostgresql className="h-8 w-8" />, color: "text-sky-400" },
+      { name: "MySQL", icon: <SiMysql className="h-8 w-8" />, color: "text-blue-400" },
       { name: "Directus", icon: <SiDirectus className="h-8 w-8" />, color: "text-purple-400" },
     ],
   },
   {
-    title: "Sistemas & Servidores",
+    title: "Infraestructura & Testing",
     items: [
+      { name: "Docker", icon: <SiDocker className="h-8 w-8" />, color: "text-sky-500" },
+      { name: "Nginx", icon: <SiNginx className="h-8 w-8" />, color: "text-emerald-500" },
       { name: "Linux", icon: <FaLinux className="h-8 w-8" />, color: "text-neutral-200" },
-      { name: "Windows", icon: <FaWindows className="h-8 w-8" />, color: "text-sky-500" },
-      { name: "FTP", icon: <FolderUp className="h-8 w-8" />, color: "text-amber-400" },
-      { name: "Hosting", icon: <Server className="h-8 w-8" />, color: "text-emerald-400" },
+      { name: "PHPUnit", icon: <TestTube2 className="h-8 w-8" />, color: "text-teal-400" },
+      { name: "k6", icon: <SiK6 className="h-8 w-8" />, color: "text-violet-400" },
     ],
   },
   {
-    title: "Herramientas & Diseño",
+    title: "Herramientas & UI",
     items: [
       { name: "Git", icon: <SiGit className="h-8 w-8" />, color: "text-orange-500" },
       { name: "GitHub", icon: <FaGithub className="h-8 w-8" />, color: "text-foreground" },
       { name: "Tailwind CSS", icon: <SiTailwindcss className="h-8 w-8" />, color: "text-cyan-300" },
-      { name: "Canva", icon: <SiCanva className="h-8 w-8" />, color: "text-violet-400" },
     ],
   },
 ];
@@ -58,11 +68,12 @@ export const TechStack = () => {
           <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary">
             Tecnologías
           </p>
-          <h2 className="text-balace text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             Stack Tecnológico
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground">
-            Las herramientas y tecnologías que uso para dar vida a las ideas
+            Tecnologías y herramientas que utilizo para diseñar, probar y
+            desplegar aplicaciones web en producción.
           </p>
         </div>
         <div className="space-y-12">
@@ -71,7 +82,7 @@ export const TechStack = () => {
               <h3 className="mb-6 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
                 {category.title}
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
                 {category.items.map((tech) => (
                   <div
                     key={tech.name}

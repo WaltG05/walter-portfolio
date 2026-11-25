@@ -1,7 +1,7 @@
 import { Button } from "@/components/Button";
 import { ButtonOut } from "@/components/Button-Out";
-import { ArrowRight } from "lucide-react";
-import { FiGithub } from "react-icons/fi";
+import { ArrowRight, Download } from "lucide-react";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
 
 export const Hero = () => {
   return (
@@ -40,7 +40,7 @@ export const Hero = () => {
           <div className="space-y-6">
             <div className="animate-fade-in space-y-4">
               <p className="text-sm font-medium uppercase tracking-widest text-primary">
-                Software Developer
+                Full Stack Developer Jr.
               </p>
             </div>
 
@@ -50,18 +50,19 @@ export const Hero = () => {
                 Walter Gonzalez
               </h1>
               <p className="max-w-lg text-pretty text-lg leading-relaxed text-muted-foreground">
-                Creando experiencias web modernas con{" "}
+                Construyo aplicaciones webs escalables y llevadas a producción
+                con <span className="text-foreground">Laravel</span>,{" "}
                 <span className="text-foreground">React</span>,{" "}
-                <span className="text-foreground">Vue.js</span>,{" "}
-                <span className="text-foreground">Laravel</span>,{" "}
-                <span className="text-foreground">Tailwind</span> y{" "}
-                <span className="text-foreground">Directus</span>. Apasionado
-                por el código limpio y las interfaces intuitivas.
+                <span className="text-foreground">PostgreSQL</span> y{" "}
+                <span className="text-foreground">Docker</span>. Enfocado en
+                arquitectura limpia, pruebas automatizadas y optimización de
+                rendimiento.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <ButtonOut variant="default"
+              <ButtonOut
+                variant="default"
                 size="sm"
                 className="gap-2 text-tertiary hover:bg-primary/30 hover:scale-105 transition-all duration-400"
               >
@@ -73,30 +74,69 @@ export const Hero = () => {
                 </a>
               </ButtonOut>
 
-              <ButtonOut variant="outline" size="sm" className="gap-2 border-border hover:bg-secondary/30 duration-300">
+              <ButtonOut
+                variant="outline"
+                size="sm"
+                className="gap-2 hover:bg-secondary/30 border-border hover:scale-105 transition-all duration-400"
+              >
+                <a 
+                href="public/cv-walter-gonzalez.pdf" className="flex items-center gap-2">
+                  <Download className="h-4 w-4" />
+                  Descargar CV
+                </a>
+              </ButtonOut>
+
+              <ButtonOut
+                variant="outline"
+                size="sm"
+                className="gap-2 border-border hover:bg-secondary/30 duration-300"
+              >
                 <a
                   href="https://github.com/WaltG05"
                   target="_blank"
                   rel="noopeer"
                   className="flex items-center gap-2"
                 >
-                  <FiGithub className="h-4 w-4" /> Github
+                  <FiGithub className="h-4 w-4" />
                 </a>
+                
               </ButtonOut>
+              <ButtonOut
+                variant="outline"
+                size="sm"
+                className="gap-2 border-border hover:bg-secondary/30 duration-300"
+              >
+                <a
+                  href="https://linkedin.com/in/waltergonz"
+                  target="_blank"
+                  rel="noopeer"
+                  className="flex items-center gap-2"
+                >
+                  <FiLinkedin className="h-4 w-4" />
+                </a>
+                
+              </ButtonOut>
+
             </div>
             {/* Stats */}
             <div className="flex gap-8 pt-4">
               <div>
-                <p className="text-3xl font-bold text-foreground">10+</p>
-                <p className="text-sm text-muted-foreground">Tecnologías</p>
+                <p className="text-3xl font-bold text-foreground">584</p>
+                <p className="text-sm text-muted-foreground">
+                  Pruebas automatizadas
+                </p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-foreground">2+</p>
-                <p className="text-sm text-muted-foreground">Proyectos</p>
+                <p className="text-3xl font-bold text-foreground">3+</p>
+                <p className="text-sm text-muted-foreground">
+                  Proyectos en producción / demo
+                </p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-foreground">2+</p>
-                <p className="text-sm text-muted-foreground">Años Aprendiendo</p>
+                <p className="text-3xl font-bold text-foreground">9,65</p>
+                <p className="text-sm text-muted-foreground">
+                  Promedio académico
+                </p>
               </div>
             </div>
           </div>

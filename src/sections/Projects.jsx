@@ -1,27 +1,59 @@
 import { useState } from "react";
 import { ButtonOut } from "@/components/Button-Out";
-import { ExternalLink, X } from "lucide-react";
+import { ExternalLink, LockIcon, X } from "lucide-react";
+import { FiGithub } from "react-icons/fi";
 
 const projectsList = [
   {
+    badge: "Proyecto destacado · Producción",
+    title: "Plataforma de Códigos QR Dinámicos y Analítica",
+    description: "Sistema web desarrollado y llevado a producción para una desarrolladora inmobiliaria y comercial de Guatemala. Permite gestionar campañas de códigos QR dinámcios, analítica de escaneos y consumo vía API REST auteneticada. Optimicé la ruta pública de redirección con APCu y validé el rendimiento con k6 (p95 de 49 a 25 ms a 20 visita/s y +60% de capacidad sostenida), respaldado por 584 pruebas automatizadas.",
+    technologies: [
+      "Laravel",
+      "React",
+      "Inertia.js",
+      "PostgreSQL",
+      "Docker",
+      "k6",
+      "PHPUnit",
+    ],
+    featured: true,
+    isPrivate: true,
+    image: "./projects/webqr.png",
+    metrics: [
+      { value: "584", label: "Pruebas automatizadas" },
+      { value: "49 → 25 ms", label: "Latencia p95 (k6)" },
+      { value: "+60%", label: "Capacidad sostenida" },
+    ],
+  },
+  {
+    badge: "Demo en vivo",
+    title: "GameCenter — E-commerce Full Stack",
+    description:
+      "Tienda online con arquitectura desacoplada desarrollada como proyecto final integrador. Incluye API REST en Laravel con CRUD completo, búsqueda, filtros avanzados y ordenamiento, junto a un frontend modular en Angular (Signals, PrimeNG y Tailwind CSS) con panel administrativo, catálogo público y carrito persistente en Local Storage.",
+    technologies: [
+      "Laravel",
+      "Angular",
+      "TypeScript",
+      "Tailwind CSS",
+      "PrimeNG",
+      "API REST",
+    ],
+    featured: false,
+    live: "https://gamecenterprog.netlify.app",
+    github: "",
+    image: "./projects/gamecenter.png",
+  },
+  {
+    badge: "Práctica Profesional",
     title: "Sistema web de Gestión de Incidencias - Acción Social",
     description:
-      "Desarrollé un sistema web para gestionar incidencias en una organización sin fines de lucro, utilizando Vue.js para el frontend y Directus para el backend. El sistema permite a los usuarios reportar, rastrear y resolver incidencias de manera eficiente, mejorando la comunicación y la respuesta del equipo.",
-    technologies: ["Vue.js", "Directus"],
-    featured: true,
+      "Aplicación web desarrollada para digitalizar el registro, seguimiento de estados y reportes estadísticos de casos en el área de Acción Social municipal. Construida con Vue.js en el frontend consumiendo API REST sobre Directus con control de acceso basado en roles (RBAC).",
+    technologies: ["Vue.js", "Directus", "JavaScript", "MySQL", "API REST"],
+    featured: false,
     github: "https://github.com/WaltG05/Sistema-de-Gestion-de-Incidencias",
     live: "https://integrasocial.innobitsolutions.com.ar",
     image: "./projects/preview-1.png",
-    demo: false
-  },
-  {
-    title: "Aplicación de Gestión Ciudadana (Web y Móvil)",
-    description:
-      "Creé una aplicación de gestión ciudadana para una municipalidad, utilizando Ionic para el desarrollo móvil y React para el frontend web. La aplicación permite a los ciudadanos reportar problemas en la comunidad y recibir actualizaciones en tiempo real, mejorando la participación ciudadana y la eficiencia del gobierno local.",
-    technologies: ["Ionic", "React", "Firebase", "Directus"],
-    featured: false,
-    image: "./projects/preview-2.png",
-    demo: false
   },
 ];
 
@@ -35,60 +67,85 @@ export const Projects = () => {
           <p className="mb-2 text-sm font-medium uppercase tracking-widest text-primary">
             Proyectos
           </p>
-          <h2 className="text-balace text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+          <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             Proyectos Destacados
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground">
-            Una selección de proyectos que muestran mis habilidades y pasión
-            por el desarrollo.
+            Sistemas en producción, demos interactivas y proyectos desarrollados
+            con foco en arquitectura limpia, pruebas y rendimiento.
           </p>
         </div>
+
         <div className="grid gap-6 lg:grid-cols-2">
-          {/* Tech items would go here */}
           {projectsList.map((project, index) => (
             <div
               key={index}
-              className={`group relative overflow-hidden rounded-2xl border border-border/50 bg-card/30 backdrop-blur-sm 
-                transition-all duration-300 hover:border-primary/50 hover:bg-card/50 
-                ${project.featured ? "lg:col-span-2" : "lg:col-span-2"}`}
+              className="group relative overflow-hidden rounded-2xl border border-border/50 bg-card/30 backdrop-blur-sm transition-all duration-300 hover:border-primary/50 hover:bg-card/50 lg:col-span-2"
             >
               {/* Glassmorphism effect */}
               <div className="absolute inset-0 -z-10 rounded-xl bg-linear-to-br from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-              
-              <div
-                className={`p-8 ${project.featured ? "lg:flex lg:gap-8" : "lg:flex lg:gap-6"}`}
-              >
-                {/* Project Preview */}
-                <div
-                  className={`mb-2 overflow-hidden rounded-xl${
-                    project.featured ? "lg:mb-0 lg:w-1/2" : "lg:mb-0 lg:w-1/2"
-                  }`}
-                >
-                  <div className="aspect-auto">
-                    {/* Mock App UI */}
+
+              <div className="p-8 lg:flex lg:items-center lg:gap-8">
+                {/* Project Preview o Tarjeta de Métricas */}
+                <div className="mb-6 overflow-hidden rounded-xl lg:mb-0 lg:w-1/2">
+                  {project.image ? (
                     <div className="h-full w-full overflow-hidden rounded-lg border border-border/30 bg-background/50">
-                      <img 
-                        src={project.image} 
-                        alt={project.title} 
+                      <img
+                        src={project.image}
+                        alt={project.title}
                         className="h-full w-full cursor-pointer object-cover transition-transform duration-500 hover:scale-105"
-                        onClick={() => project.image && setSelectedImage(project.image)}
+                        onClick={() => setSelectedImage(project.image)}
                       />
                     </div>
-                  </div>
+                  ) : (
+                    <div className="flex h-full min-h-65 flex-col justify-between rounded-lg border border-border/40 bg-background/60 p-6">
+                      <div className="flex items-center justify-between text-xs text-muted-foreground">
+                        <span className="font-mono uppercase tracking-wider text-primary">
+                          Arquitectura &amp; Métricas
+                        </span>
+                        <span className="inline-flex items-center gap-1 rounded-full border border-border/50 px-2.5 py-0.5 text-[11px]">
+                          <Lock className="h-3 w-3" />
+                          Producción
+                        </span>
+                      </div>
+
+                      <div className="my-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+                        {project.metrics?.map((metric) => (
+                          <div
+                            key={metric.label}
+                            className="rounded-lg border border-border/40 bg-card/40 p-4 text-center"
+                          >
+                            <p className="text-xl font-bold text-primary">
+                              {metric.value}
+                            </p>
+                            <p className="mt-1 text-xs text-muted-foreground">
+                              {metric.label}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+
+                      <p className="font-mono text-xs text-muted-foreground/80">
+                        Nginx → Laravel + APCu → PostgreSQL 16 (Docker)
+                      </p>
+                    </div>
+                  )}
                 </div>
+
                 {/* Project Info */}
-                <div className={`${project.featured ? "lg:w-1/2" : "lg:w-1/2"}`}>
-                  {project.featured && (
-                    <span className="mb-2 inline-block rounded-full bg-primary/10 px-3 py-1 text-primary text-xs font-medium">
-                      Proyecto Destacado
+                <div className="lg:w-1/2">
+                  {project.badge && (
+                    <span className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                      {project.badge}
                     </span>
                   )}
                   <h3 className="mb-3 text-xl font-bold text-foreground">
                     {project.title}
                   </h3>
-                  <p className="mb-4 text-muted-foreground text-pretty leading-relaxed">
+                  <p className="mb-4 text-pretty leading-relaxed text-muted-foreground">
                     {project.description}
                   </p>
+
                   {/* Tech Stack */}
                   <div className="mb-6 flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
@@ -100,25 +157,51 @@ export const Projects = () => {
                       </span>
                     ))}
                   </div>
+
                   {/* Actions */}
-                  {project.demo && (
-                    <div className="flex gap-3">
-                    <ButtonOut
-                      size="sm"
-                      className="gap-2 bg-primary text-tertiary hover:bg-primary/90"
-                    >
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2"
+                  <div className="flex flex-wrap items-center gap-3">
+                    {project.live && (
+                      <ButtonOut
+                        size="sm"
+                        className="gap-2 bg-primary text-tertiary hover:bg-primary/90"
                       >
-                        <ExternalLink className="h-4 w-4" />
-                        Ver Demo
-                      </a>
-                    </ButtonOut>
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                          Ver Demo
+                        </a>
+                      </ButtonOut>
+                    )}
+
+                    {project.github && (
+                      <ButtonOut
+                        size="sm"
+                        variant="outline"
+                        className="gap-2 border-border hover:bg-secondary/40 duration-300"
+                      >
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          <FiGithub className="h-4 w-4" />
+                          GitHub
+                        </a>
+                      </ButtonOut>
+                    )}
+
+                    {project.isPrivate && (
+                      <span className="inline-flex items-center gap-1.5 rounded-lg border border-border/50 bg-background/40 px-3 py-1.5 text-xs text-muted-foreground">
+                        <LockIcon className="h-3.5 w-3.5" />
+                        Código privado (NDA)
+                      </span>
+                    )}
                   </div>
-                  )}
                 </div>
               </div>
             </div>
@@ -133,7 +216,7 @@ export const Projects = () => {
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute right-6 top-6 text-foreground transition-colors hover:text-primary cursor-pointer"
+            className="absolute right-6 top-6 cursor-pointer text-foreground transition-colors hover:text-primary"
             onClick={() => setSelectedImage(null)}
             aria-label="Cerrar"
           >
@@ -148,5 +231,4 @@ export const Projects = () => {
         </div>
       )}
     </section>
-  );
-};
+  );};
