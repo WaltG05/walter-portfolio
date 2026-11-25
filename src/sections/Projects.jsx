@@ -7,7 +7,7 @@ const projectsList = [
   {
     badge: "Proyecto destacado · Producción",
     title: "Plataforma de Códigos QR Dinámicos y Analítica",
-    description: "Sistema web desarrollado y llevado a producción para una empresa de Guatemala. Permite gestionar campañas de códigos QR dinámicos, analítica de escaneos y consumo vía API REST auteneticada. Optimicé la ruta pública de redirección con APCu y validé el rendimiento con k6 (p95 de 49 a 25 ms a 20 visitas/s y +60% de capacidad sostenida), respaldado por 584 pruebas automatizadas.",
+    description: "Sistema web desarrollado y llevado a producción para una empresa de Guatemala. Permite gestionar campañas de códigos QR dinámicos, analítica de escaneos y consumo vía API REST autenticada. Optimicé la ruta pública de redirección con APCu y validé el rendimiento con k6 (p95 de 49 a 25 ms a 20 visitas/s y +60 % de capacidad, de ~37 a ~60 visitas/s), respaldado por 584 pruebas automatizadas.",
     technologies: [
       "Laravel",
       "React",
@@ -23,7 +23,7 @@ const projectsList = [
     metrics: [
       { value: "584", label: "Pruebas automatizadas" },
       { value: "49 → 25 ms", label: "Latencia p95 (k6)" },
-      { value: "+60%", label: "Capacidad sostenida" },
+      { value: "+60 %", label: "Capacidad (~37 → ~60 visitas/s)" },
     ],
   },
   {
@@ -45,14 +45,14 @@ const projectsList = [
     image: "./projects/gamecenter.png",
   },
   {
-    badge: "Práctica Profesional",
+    badge: "Práctica Profesional · Equipo de 5",
     title: "Sistema web de Gestión de Incidencias - Acción Social",
     description:
-      "Aplicación web desarrollada para digitalizar el registro, seguimiento de estados y reportes estadísticos de casos en el área de Acción Social municipal. Construida con Vue.js en el frontend consumiendo API REST sobre Directus con control de acceso basado en roles (RBAC).",
+      "Sistema para digitalizar el registro, seguimiento de estados y reportes estadísticos de casos del área de Acción Social municipal, desarrollado en equipo. Fui el autor principal del frontend en Vue.js (46 de 111 commits y ~75 % del código), que consume una API REST sobre Directus con control de acceso basado en roles (RBAC).",
     technologies: ["Vue.js", "Directus", "JavaScript", "MySQL", "API REST"],
     featured: false,
-    github: "https://github.com/WaltG05/Sistema-de-Gestion-de-Incidencias",
-    live: "https://integrasocial.innobitsolutions.com.ar",
+    isPrivate: true,
+    privateLabel: "Código privado (proyecto en equipo)",
     image: "./projects/preview-1.png",
   },
 ];
@@ -104,7 +104,7 @@ export const Projects = () => {
                           Arquitectura &amp; Métricas
                         </span>
                         <span className="inline-flex items-center gap-1 rounded-full border border-border/50 px-2.5 py-0.5 text-[11px]">
-                          <Lock className="h-3 w-3" />
+                          <LockIcon className="h-3 w-3" />
                           Producción
                         </span>
                       </div>
@@ -198,7 +198,7 @@ export const Projects = () => {
                     {project.isPrivate && (
                       <span className="inline-flex items-center gap-1.5 rounded-lg border border-border/50 bg-background/40 px-3 py-1.5 text-xs text-muted-foreground">
                         <LockIcon className="h-3.5 w-3.5" />
-                        Código privado (propiedad del cliente)
+                        {project.privateLabel ?? "Código privado (propiedad del cliente)"}
                       </span>
                     )}
                   </div>
