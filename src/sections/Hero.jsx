@@ -10,7 +10,8 @@ export const Hero = () => {
       <div className="absolute inset-0">
         <img
           src="/hero-bg.jpg"
-          alt="Hero Image"
+          alt=""
+          aria-hidden="true"
           className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-background/50 to-background" />
@@ -94,7 +95,8 @@ export const Hero = () => {
                 <a
                   href="https://github.com/WaltG05"
                   target="_blank"
-                  rel="noopeer"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
                   className="flex items-center gap-2"
                 >
                   <FiGithub className="h-4 w-4" />
@@ -109,7 +111,8 @@ export const Hero = () => {
                 <a
                   href="https://linkedin.com/in/waltergonz"
                   target="_blank"
-                  rel="noopeer"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                   className="flex items-center gap-2"
                 >
                   <FiLinkedin className="h-4 w-4" />
